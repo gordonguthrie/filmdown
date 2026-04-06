@@ -54,7 +54,6 @@ defmodule Filmdown.RoundtripTest do
 
       html = Filmdown.to_html(filmdown)
       regenerated = Filmdown.to_filmdown(html)
-
       # Strip blank lines and trim content from each line, because the parser
       # trims content and drops blank lines (as per spec).
       canonical =

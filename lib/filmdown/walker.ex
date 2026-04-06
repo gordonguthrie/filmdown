@@ -5,15 +5,15 @@ defmodule Filmdown.Walker do
 
   # Maps CSS class names back to filmdown identifiers.
   @class_to_identifier %{
-    "scene-heading" => "SCENEHEADING",
-    "action" => "ACTION",
-    "character" => "CHARACTER",
-    "parenthetical" => "PARENTHETICAL",
-    "dialogue" => "DIALOGUE",
-    "transition" => "TRANSITION",
-    "shot" => "SHOT",
-    "general-text" => "GENERALTEXT",
-    "centred-general-text" => "CENTREDGENERALTEXT"
+    "filmdown-scene-heading" => "SCENEHEADING",
+    "filmdown-action" => "ACTION",
+    "filmdown-character" => "CHARACTER",
+    "filmdown-parenthetical" => "PARENTHETICAL",
+    "filmdown-dialogue" => "DIALOGUE",
+    "filmdown-transition" => "TRANSITION",
+    "filmdown-shot" => "SHOT",
+    "filmdown-general-text" => "GENERALTEXT",
+    "filmdown-centred-general-text" => "CENTREDGENERALTEXT"
   }
 
   # Matches a single HTML element produced by the parser, e.g.

@@ -8,15 +8,15 @@ defmodule Filmdown.Parser do
 
   # Maps filmdown identifiers to {html_tag, css_class}
   @element_map %{
-    "SCENEHEADING" => {"h1", "scene-heading"},
-    "ACTION" => {"p", "action"},
-    "CHARACTER" => {"p", "character"},
-    "PARENTHETICAL" => {"p", "parenthetical"},
-    "DIALOGUE" => {"p", "dialogue"},
-    "TRANSITION" => {"p", "transition"},
-    "SHOT" => {"p", "shot"},
-    "GENERALTEXT" => {"p", "general-text"},
-    "CENTREDGENERALTEXT" => {"p", "centred-general-text"}
+    "SCENEHEADING" => {"h1", "filmdown-scene-heading"},
+    "ACTION" => {"p", "filmdown-action"},
+    "CHARACTER" => {"p", "filmdown-character"},
+    "PARENTHETICAL" => {"p", "filmdown-parenthetical"},
+    "DIALOGUE" => {"p", "filmdown-dialogue"},
+    "TRANSITION" => {"p", "filmdown-transition"},
+    "SHOT" => {"p", "filmdown-shot"},
+    "GENERALTEXT" => {"p", "filmdown-general-text"},
+    "CENTREDGENERALTEXT" => {"p", "filmdown-centred-general-text"}
   }
 
   @doc """
@@ -27,14 +27,12 @@ defmodule Filmdown.Parser do
   """
   @spec parse(String.t()) :: String.t()
   def parse(filmdown_text) do
-    body =
+    _body =
       filmdown_text
       |> String.split("\n")
       |> Enum.reject(&blank_line?/1)
       |> Enum.flat_map(&parse_line/1)
       |> Enum.join("\n")
-
-    "<html><body>\n#{body}\n</body></html>"
   end
 
   # Returns true when the line is empty or whitespace-only.
